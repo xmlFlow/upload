@@ -1,0 +1,3 @@
+[submodule "docxtotei"]
+	path = docxtotei
+	url = https://github.com/xmlFlow/docxtotei.git
