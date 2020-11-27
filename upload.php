@@ -1,5 +1,6 @@
 <html>
 <head>
+    <title>Converter</title>
     <style>
         table {
             font-family: arial, sans-serif;
@@ -53,7 +54,12 @@ if (!empty($uploaded_file) && pathinfo($name, PATHINFO_EXTENSION) == "docx") {
         $input_file =  join(DIRECTORY_SEPARATOR, [getcwd(),$path]);
         $command = join(" ", ["php", $docxtotei,$input_file,str_replace('.docx','.xml',$input_file),$docxtoteiConfig]);
         $output = shell_exec($command." 2>&1; echo $?");
-        print("The file " . basename($name) . " has been uploaded");
+        file_put_contents(str_replace('.docx','.log',$input_file), $output);
+        print("The file " . basename($name) . " has been  converted".'<br/>');
+        foreach (explode("\n",$output) as $value){
+            print($value.'<br/>');
+        }
+
     } else {
         echo "There was an error uploading the file, please try again!";
     }
@@ -62,14 +68,11 @@ if (!empty($uploaded_file) && pathinfo($name, PATHINFO_EXTENSION) == "docx") {
 }
 
 
-$myDirectory = opendir("uploads/.");
-// get each entry
-while ($entryName = readdir($myDirectory)) {
+$uploads = opendir("uploads/.");
+while ($entryName = readdir($uploads)) {
     $dirArray[] = $entryName;
 }
-// close directory
-closedir($myDirectory);
-//  count elements in array
+closedir($uploads);
 $indexCount = count($dirArray);
 
 // sort 'em
@@ -86,5 +89,26 @@ for ($index = 0; $index < $indexCount; $index++) {
     }
 }
 print("</TABLE>\n");
+
+print("<H2>Templates</H2>\n");
+
+$docs = opendir("templates/.");
+while ($entryName = readdir($docs)) {
+    $templates[] = $entryName;
+}
+closedir($docs);
+$indexCount = count($templates);
+
+print("<TABLE border=1 cellpadding=5 cellspacing=0 class=whitelinks>\n");
+for ($index = 0; $index < $indexCount; $index++) {
+    if (substr("$templates[$index]", 0, 1) != ".") { // don't list hidden files
+        print("<TR><TD><a href=\"uploads/$templates[$index]\">$templates[$index]</a></td></TR>");
+
+    }
+}
+print("</TABLE>\n");
+
+
+
 
 ?>

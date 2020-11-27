@@ -1,0 +1,11 @@
+Dear all,
+
+I have prepared an initial release of the converter  for testing.
+
+
+
+# Installation
+
+sudo apt-get install php7.4-zip
+sudo apt-get install php7.4-xml
+
