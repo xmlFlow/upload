@@ -102,7 +102,7 @@ $indexCount = count($templates);
 print("<TABLE border=1 cellpadding=5 cellspacing=0 class=whitelinks>\n");
 for ($index = 0; $index < $indexCount; $index++) {
     if (substr("$templates[$index]", 0, 1) != ".") { // don't list hidden files
-        print("<TR><TD><a href=\"uploads/$templates[$index]\">$templates[$index]</a></td></TR>");
+        print("<TR><TD><a href=\"templates/$templates[$index]\">$templates[$index]</a></td></TR>");
 
     }
 }
