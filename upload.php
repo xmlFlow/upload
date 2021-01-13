@@ -17,10 +17,19 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: grey;
+            color: white;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-<h2>Conversion Tool</h2>
+<h2>Conversion Tool (Version 1)</h2>
 <form enctype="multipart/form-data" action="upload.php" method="POST">
     <table>
 
@@ -109,6 +118,9 @@ for ($index = 0; $index < $indexCount; $index++) {
 print("</TABLE>\n");
 
 
+print('<div class="footer">');
+print('  <p>This Tool is  an initial version (1) , an updated version  will follow soon.</p>');
+print('</div>');
 
 
 ?>
