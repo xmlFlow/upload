@@ -27,20 +27,32 @@
             text-align: center;
         }
     </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
 </head>
 <body>
-<h2>Conversion Tool (Version 1)</h2>
+<h2 >Conversion Tool (Version 1)</h2>
+<div class="col-xs-12" style="height:50px;"></div>
 <form enctype="multipart/form-data" action="upload.php" method="POST">
-    <table>
+    <table class="table">
 
         <tr>
-            <td width="30%"><input type="file" name="uploaded_file"></input></td>
-            <td><input type="submit" value="Upload"></input></td>
+            <td width="30%"><input type="file" name="uploaded_file" class="btn btn-light"></input></td>
+            <td><input type="submit" value="Upload" class="btn btn-light" data-bs-toggle="tooltip" data-bs-placement="top" title="Upload a Microsoft Word  (.docx)"></input>
+
+            </td>
         </tr>
     </table>
 
 
 </form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
 
@@ -98,7 +110,7 @@ for ($index = 0; $index < $indexCount; $index++) {
     }
 }
 print("</TABLE>\n");
-
+print('<div class="col-xs-12" style="height:500px;"></div>');
 print("<H2>Templates</H2>\n");
 
 $docs = opendir("templates/.");
