@@ -2,21 +2,7 @@
 <head>
     <title>Converter</title>
     <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
 
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
         .footer {
             position: fixed;
             left: 0;
@@ -25,6 +11,19 @@
             background-color: grey;
             color: white;
             text-align: center;
+        }
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
         }
     </style>
     <meta charset="utf-8">
@@ -35,7 +34,29 @@
 
 </head>
 <body>
-<h2 >Conversion Tool (Version 1)</h2>
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted"></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <strong>MS-Word to TEI Conversion Tool (Version 1)</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+
 <div class="col-xs-12" style="height:50px;"></div>
 <form enctype="multipart/form-data" action="upload.php" method="POST">
     <table class="table">
@@ -76,16 +97,18 @@ if (!empty($uploaded_file) && pathinfo($name, PATHINFO_EXTENSION) == "docx") {
         $command = join(" ", ["php", $docxtotei,$input_file,str_replace('.docx','.xml',$input_file),$docxtoteiConfig]);
         $output = shell_exec($command." 2>&1; echo $?");
         file_put_contents(str_replace('.docx','.log',$input_file), $output);
+        print('<TABLE class="table  table-striped">');
         print("The file " . basename($name) . " has been  converted".'<br/>');
         foreach (explode("\n",$output) as $value){
             print($value.'<br/>');
         }
+        print('</table>');
 
     } else {
         echo "There was an error uploading the file, please try again!";
     }
 } else {
-    echo "Only docx files can be converted";
+    echo "Only docx files can be converted.";
 }
 
 
@@ -99,9 +122,8 @@ $indexCount = count($dirArray);
 // sort 'em
 sort($dirArray);
 // print 'em
-print("<br/>\n");
-print("<br/>\n");
-print("<TABLE border=1 cellpadding=5 cellspacing=0 class=whitelinks>\n");
+
+print('<TABLE class="table  table-striped">');
 // loop through the array of files and print them all
 for ($index = 0; $index < $indexCount; $index++) {
     if (substr("$dirArray[$index]", 0, 1) != ".") { // don't list hidden files
@@ -110,6 +132,10 @@ for ($index = 0; $index < $indexCount; $index++) {
     }
 }
 print("</TABLE>\n");
+
+
+// Templates
+
 print('<div class="col-xs-12" style="height:500px;"></div>');
 print("<H2>Templates</H2>\n");
 
@@ -120,7 +146,7 @@ while ($entryName = readdir($docs)) {
 closedir($docs);
 $indexCount = count($templates);
 
-print("<TABLE border=1 cellpadding=5 cellspacing=0 class=whitelinks>\n");
+print('<TABLE  class="table  table-striped">');
 for ($index = 0; $index < $indexCount; $index++) {
     if (substr("$templates[$index]", 0, 1) != ".") { // don't list hidden files
         print("<TR><TD><a href=\"templates/$templates[$index]\">$templates[$index]</a></td></TR>");
@@ -130,9 +156,9 @@ for ($index = 0; $index < $indexCount; $index++) {
 print("</TABLE>\n");
 
 
-print('<div class="footer">');
-print('  <p>This Tool is  an initial version (1) , an updated version  will follow soon.</p>');
-print('</div>');
+print('<footer class="footer mt-auto py-3 bg-light">  <div class="container">');
+print('   <span class="text-muted">This Tool is  an initial version (1) , an updated version  will follow soon.</span>');
+print(' </div></footer>');
 
 
 ?>
