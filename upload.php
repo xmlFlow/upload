@@ -54,7 +54,7 @@
                 <strong>DOCX-TEI/XML conversion tool</strong>
             </a>
             <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"></span>    <a href="help.html" target="_self">Document encoding tutorial</a>
+                <span class="navbar-toggler-icon"></span>    <a href="help.html" target="_blank">Document encoding tutorial</a>
             </button>
         </div>
     </div>
