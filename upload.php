@@ -39,7 +39,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12">
-                    <?php include 'help.html';?>
+
+                    <a href="help.html" target="_self"></a>
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
 
@@ -50,10 +51,10 @@
     <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a href="#" class="navbar-brand d-flex align-items-center">
-                <strong>DOCX-TEI/XML conversion tool (Version 1)</strong>
+                <strong>DOCX-TEI/XML conversion tool</strong>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span> Help
+                <span class="navbar-toggler-icon"></span>  Document encoding tutorial
             </button>
         </div>
     </div>
@@ -158,7 +159,7 @@ print("</TABLE>\n");
 
 
 print('<footer class="footer mt-auto py-3 bg-light">  <div class="container">');
-print('   <span class="text-muted">This Tool is  an initial version (1) , an updated version  will follow soon.</span>');
+print('   <span class="text-muted">The tool was funded by the project “Anthropology of Inscriptions: Memory and Cultural Heritage in the Public Sphere” at the Heidelberg Centre for Transcultural Studies (HCTS), University of Heidelberg, within the framework of the Flagship Initiative “Transforming Cultural Heritage”. This software is published under the [GNU General Public License Version 3.](https://github.com/xmlFlow/docxToTEI/blob/main/LICENSE)</span>');
 print(' </div></footer>');
 
 
