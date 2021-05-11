@@ -53,7 +53,7 @@
             <a href="#" class="navbar-brand d-flex align-items-center">
                 <strong>DOCX-TEI/XML conversion tool</strong>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>    <a href="help.html" target="_self">Document encoding tutorial</a>
             </button>
         </div>
