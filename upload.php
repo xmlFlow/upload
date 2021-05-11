@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12">
 
-                    <a href="help.html" target="_self"></a>
+
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
 
@@ -54,7 +54,7 @@
                 <strong>DOCX-TEI/XML conversion tool</strong>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>  Document encoding tutorial
+                <span class="navbar-toggler-icon"></span>    <a href="help.html" target="_self">Document encoding tutorial</a>
             </button>
         </div>
     </div>
