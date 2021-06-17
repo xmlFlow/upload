@@ -164,7 +164,7 @@ print("</TABLE>\n");
 
 print('<footer class="footer mt-auto py-3 bg-light">  <div class="container">');
 print('   <span class="text-muted">The tool was developed by the project “Anthropology of Inscriptions: Memory and Cultural Heritage in the Public Sphere” at the Heidelberg Centre for Transcultural Studies (HCTS), University of Heidelberg, within the framework of the Flagship Initiative “Transforming Cultural Heritage”. This software is published under the <a href="https://github.com/xmlFlow/docxToTEI/blob/main/LICENSE">GNU General Public License Version 3.</a> First release: 2021 </span><br/>');
-print('   <span class="text-muted">For further enquiries: <a href="mailto:nepal@hadw-bw.de>nepal@hadw-bw.de</a> </span>');
+print('   <span class="text-muted">For further enquiries: <a href="mailto:nepal@hadw-bw.de">nepal@hadw-bw.de</a> </span>');
 print(' </div></footer>');
 
 
