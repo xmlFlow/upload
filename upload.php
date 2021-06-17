@@ -25,13 +25,17 @@
                 font-size: 3.5rem;
             }
         }
+
+        button > a {
+            color: #fff !important;
+        }
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 <header>
@@ -54,7 +58,7 @@
                 <strong>DOCX-TEI/XML conversion tool</strong>
             </a>
             <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"></span>    <a href="help.html" target="_blank">Document encoding tutorial</a>
+                <i class="fas fa-question"></i> <a href="help/Docx-TEI%20XML%20Encoding%20Guide.pdf" target="_blank">Document encoding tutorial</a>
             </button>
         </div>
     </div>
@@ -159,7 +163,8 @@ print("</TABLE>\n");
 
 
 print('<footer class="footer mt-auto py-3 bg-light">  <div class="container">');
-print('   <span class="text-muted">The tool was funded by the project “Anthropology of Inscriptions: Memory and Cultural Heritage in the Public Sphere” at the Heidelberg Centre for Transcultural Studies (HCTS), University of Heidelberg, within the framework of the Flagship Initiative “Transforming Cultural Heritage”. This software is published under the <a href="https://github.com/xmlFlow/docxToTEI/blob/main/LICENSE">GNU General Public License Version 3.</a>)</span>');
+print('   <span class="text-muted">The tool was developed by the project “Anthropology of Inscriptions: Memory and Cultural Heritage in the Public Sphere” at the Heidelberg Centre for Transcultural Studies (HCTS), University of Heidelberg, within the framework of the Flagship Initiative “Transforming Cultural Heritage”. This software is published under the <a href="https://github.com/xmlFlow/docxToTEI/blob/main/LICENSE">GNU General Public License Version 3.</a> First release: 2021 </span><br/>');
+print('   <span class="text-muted">For further enquiries: nepal@hadw-bw.de </span>');
 print(' </div></footer>');
 
 
